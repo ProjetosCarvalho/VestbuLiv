@@ -1,0 +1,388 @@
+/*--------------------------------------------------------------
+# Geral
+--------------------------------------------------------------*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FFF6E8;
+}
+
+
+h1{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+h2{
+    font-size: 1.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    text-align: center;
+    color: #4f3f3a;
+}
+
+h3{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #4f3f3a;
+    font-size: 1.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+    color: 2E212A;
+    line-height: 1.2;
+    margin-top: 2%;
+}
+
+figure{
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+.space {
+    height: 150px;
+}
+
+footer{
+    background-color: #D9C8AE;
+    padding: 20px 30px; 
+    margin-top: 5%;
+}
+
+/*---- Menu -----*/
+
+header{
+    background-color: #D9C8AE;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; 
+    height: 40px;
+}
+
+.logo {
+    width: 120px;
+    margin-top: 0.3%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4f3f3a;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-icons {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-right: 2%;
+}
+
+button{
+    background-color: #D9C8AE;
+    border: none;
+    transition: transform 0.3s ease; 
+}
+
+button:hover {
+    transform: scale(1.2); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+.nav-icons .icon a:hover { 
+    color: #fff;  
+}
+
+/*---- Menu -----*/
+
+.cards-row {
+    display: flex;
+    gap: 2%;
+    justify-content: flex-start; 
+    margin-left: 3%; 
+    flex-wrap: wrap;
+    margin-bottom: 7%;
+}
+
+.content{
+    margin-left: 5%;
+    background-color: #fffbf7;
+    padding: 4%;
+    width: 80%;
+    box-shadow: #765454;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.img-banner{
+    width: 40%;
+    left: 57%; 
+    position: absolute; 
+    bottom: 0;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 400px;
+    background-color: #4f3f3a;
+    position: relative;
+    color: #f7f2e8;
+}
+
+.text-content {
+    max-width: 50%; 
+    text-align: left; 
+    margin-left: 4%;
+}
+
+.title {
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 48px; 
+    margin: 0; 
+    color: #f7f2e8; 
+    margin-right: 40%;
+    
+}
+
+.slogan {
+    background-color: #b8a290; 
+    color: #4f3d32; 
+    padding: 5px 15px; 
+    font-family: 'Verdana', sans-serif; 
+    font-size: 18px; 
+    border-radius: 5px; 
+    display: inline-block; 
+    margin-top: 10px; 
+}
+
+
+/*---- Livros e autores -----*/
+
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.book-card {
+    background-color: #FFF;
+    border: 1px solid #D9C8AE;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.book-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.book-card p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9em;
+    color: #2E212A;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/*---- Tabelas Vestibular -----*/
+
+.vestibular-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.vestibular-table {
+    width: 80%;
+    border-collapse: collapse;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #FFF;
+    border: 1px solid #D9C8AE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.vestibular-table thead {
+    background-color: #D9C8AE;
+}
+
+.vestibular-table th, .vestibular-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #D9C8AE;
+}
+
+.vestibular-table th {
+    font-size: 1em;
+    color: #4f3f3a;
+}
+
+.vestibular-table td {
+    font-size: 0.9em;
+    color: #2E212A;
+}
+
+.vestibular-table tbody tr:hover {
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
+
+/*---- Sobre livro e autor -----*/
+
+.author-section {
+    background-color: #f9f2e7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Serif', serif;
+}
+
+.author-card {
+    display: inline-block;
+    border: 1px solid #e5d7c0;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.author-card img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+.author-info {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 12px;
+    color: #5a3e2b;
+    line-height: 1.6;
+}
+
+.author-info p {
+    margin: 5px 0;
+}
+
+.author-description {
+    font-size: 16px;
+    color: #5a3e2b;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/*---- Acessibilidade  -----*/
+.alto-contraste {
+    background-color: black; 
+    color: white;
+}
+
+.alto-contraste p {
+    color: white;
+}
+
+.alto-contraste .content {
+    background-color: #3b3b3b;
+}
+
+.alto-contraste .title {
+    color: white;
+}
+
+.alto-contraste .banner{
+    background-color: black;
+}
+
+.alto-contraste footer{
+    background-color: black;
+}
+
+.alto-contraste .slogan {
+    background-color: #3b3b3b; 
+    color: white; 
+}
+
+.alto-contraste h1, h2, h3{
+    color: yellow;
+}
+
+.alto-contraste table {
+    background-color: #3b3b3b;  
+}
+
+.alto-contraste .book-card {
+    background-color: #3b3b3b;  
+}
+
+.alto-contraste th {
+    background-color: rgb(211, 210, 210);
+}
+
+.alto-contraste td {
+    color: white;
+}
+
+.preto-e-branco {
+    filter: grayscale(100%);
+}

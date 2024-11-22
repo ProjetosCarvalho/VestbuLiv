@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href=""><img src="img/Logo.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="obras.html">Obras</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="universidades.html">Universidades</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+            <ul class="nav-icons">
+                <button id="aumentar-texto"><img src="img/a_mais.png" class="icon" title="Ferramenta aumentar texto"/></button>
+                <button id="diminuir-texto"><img src="img/a_menos.png" class="icon" title="Ferramenta diminuir texto"/></button>
+                <button id="alternar-contraste"><img src="img/alto_contraste.png" class="icon" title="Ferramenta alto contraste"/></button>
+                <button id="preto-e-branco"><img src="img/preto_e_branco.png" class="icon" title="Ferramenta preto e branco"/></button>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <div class="banner">
+            <div class="text-content">
+                <h1 class="title">VestibuLiv</h1>
+                <p class="slogan">Domine o vestibular com os clássicos.</p>
+            </div>
+            <img class="img-banner" src="img/banner.svg" alt="">
+        </div>
+        <div class="content">
+            <p>
+                Bem-vindo ao VestibuLiv: Domine o Vestibular com os Clássicos! Aqui, acreditamos que a chave para o sucesso no vestibular está em uma sólida compreensão dos grandes clássicos da literatura. Nosso objetivo é proporcionar a você as ferramentas e o conhecimento necessários para não apenas se preparar para as provas, mas também para apreciar a riqueza e a profundidade das obras literárias que marcaram a história.
+            </p>
+            <p>
+                Estamos felizes por ter você conosco nessa jornada de aprendizado e descoberta. Nosso site foi cuidadosamente desenvolvido para ser seu aliado na preparação para o vestibular, oferecendo resumos, análises detalhadas e dicas preciosas sobre os clássicos literários. Prepare-se para mergulhar no universo das grandes obras e dominar o vestibular com confiança e excelência. Boa sorte e bons estudos!
+            </p>
+        </div>
+    </div>
+    <footer>
+        <h2>VestbuLiv @2024</h2>
+    </footer>
+    <div vw class="enabled"> 
+       <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper> 
+            <div class="vw-plugin-top-wrapper">
+            </div> 
+        </div> 
+    </div> 
+    
+    <script type="text/javascript">
+
+        window.onload = function() {
+            //Seleciona o elemento body para que possamos alterar o estilo.
+            var corpoDaPagina = document.querySelector('body');
+            var aumentarTexto = document.getElementById('aumentar-texto');
+            var diminuirTexto = document.getElementById('diminuir-texto');
+
+            //O padrão de tamanho equivale a 100% do valor definido do style.
+            var fontSize = 100;
+
+            //Valor percentual de 10% que irá aumentar ou diminuir do padrão da fonte.
+            var qntAumentarDiminuir = 10;
+
+            //Evento de click para aumentar a fonte.
+            aumentarTexto.addEventListener('click', function(event) {
+                fontSize += qntAumentarDiminuir;
+                corpoDaPagina.style.fontSize = fontSize + '%';
+            });
+
+            //Evento de click para diminuir a fonte.
+            diminuirTexto.addEventListener('click', function(event) {
+                fontSize -= qntAumentarDiminuir;
+                corpoDaPagina.style.fontSize = fontSize + '%';
+            });
+        }
+
+        document.getElementById('alternar-contraste').addEventListener('click', function() {
+            document.body.classList.toggle('alto-contraste');
+        });
+
+        document.getElementById('preto-e-branco').addEventListener
+        ('click', function() 
+            {
+                document.body.classList.toggle('preto-e-branco');
+            }
+        );
+
+    </script>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Detalhes do Autor</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href=""><img src="img/Logo.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="obras.html">Obras</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="universidades.html">Universidades</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+            <ul class="nav-icons">
+                <button id="aumentar-texto"><img src="img/a_mais.png" class="icon" title="Ferramenta aumentar texto"/></button>
+                <button id="diminuir-texto"><img src="img/a_menos.png" class="icon" title="Ferramenta diminuir texto"/></button>
+                <button id="alternar-contraste"><img src="img/alto_contraste.png" class="icon" title="Ferramenta alto contraste"/></button>
+                <button id="preto-e-branco"><img src="img/preto_e_branco.png" class="icon" title="Ferramenta preto e branco"/></button>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <div class="author-section">
+            <h1 id="author-name">Nome do Autor</h1>
+            <div class="author-card">
+                <img id="author-image" src="img/autor.jpg" alt="Nome do Autor">
+                <div class="author-info">
+                    <p id="author-name"><strong>Nome:</strong> Nome Completo do Autor</p>
+                    <p id="birth-date"><strong>Nascimento:</strong> Data de Nascimento</p>
+                    <p id="death-date"><strong>Falecimento:</strong> Data de Falecimento</p>
+                </div>
+            </div>
+            <p id="author-description" class="author-description">
+                Descrição sobre o autor.
+            </p>
+        </div>        
+    </div>
+    <footer>
+        <h2>VestbuLiv @2024</h2>
+    </footer>
+    <script>
+        // Estrutura de dados contendo o conteúdo para cada autor
+    const authorsContent = {
+    "machado-de-assis": {
+        name: "Machado de Assis",
+        birthDate: "21 de junho de 1839",
+        deathDate: "29 de setembro de 1908",
+        image: "img/machado.webp",
+        description: "Machado de Assis (1839-1908) é um dos maiores representantes da literatura brasileira. Ele inaugurou o Realismo no Brasil com a obra 'Memórias Póstumas de Brás Cubas', publicada em 1881. Ele é mais conhecido pelos livros de sua segunda fase, que criticam a idealização romântica. Sua obra explora a complexidade da sociedade carioca e temas como a moralidade, a vaidade e as nuances do comportamento humano."
+    },
+    "jose-de-alencar": {
+        name: "José de Alencar",
+        birthDate: "1 de maio de 1829",
+        deathDate: "12 de dezembro de 1877",
+        image: "img/jose.jpg",
+        description: "José de Alencar (1829-1877) foi um dos maiores escritores do Romantismo brasileiro. Conhecido por suas obras indianistas, como 'Iracema', 'O Guarani' e 'Ubirajara', ele ajudou a moldar a identidade cultural brasileira. Seus romances urbanos, como 'Senhora' e 'Lucíola', exploram as questões sociais e políticas do século XIX."
+    },
+    "graciliano-ramos": {
+        name: "Graciliano Ramos",
+        birthDate: "27 de outubro de 1892",
+        deathDate: "20 de março de 1953",
+        image: "img/graciliano.jfif",
+        description: "Graciliano Ramos (1892-1953) foi um renomado escritor modernista brasileiro, reconhecido por sua obra realista e socialmente crítica. Ele retrata de forma crua e direta a vida no sertão nordestino em obras como 'Vidas Secas' e 'São Bernardo', focando na luta pela sobrevivência e na exploração das condições de vida adversas."
+    },
+    "aluisio-azevedo": {
+        name: "Aluísio Azevedo",
+        birthDate: "14 de abril de 1857",
+        deathDate: "21 de janeiro de 1913",
+        image: "img/aluisio[.webp",
+        description: "Aluísio Azevedo (1857-1913) foi um dos principais escritores do Naturalismo no Brasil. Sua obra mais famosa, 'O Cortiço', explora as condições de vida nas camadas mais pobres da sociedade carioca, utilizando uma abordagem crítica para discutir temas como a influência do ambiente na formação do caráter das pessoas."
+    },
+    "cecilia-meireles": {
+        name: "Cecília Meireles",
+        birthDate: "7 de novembro de 1901",
+        deathDate: "9 de novembro de 1964",
+        image: "img/Cecília-Meireles.jpg",
+        description: "Cecília Meireles (1901-1964) foi uma das mais importantes poetisas brasileiras, conhecida por sua obra lírica e por seu papel na renovação da poesia brasileira. Seus poemas, muitas vezes de cunho intimista e reflexivo, exploram temas como a passagem do tempo, a morte e a busca por sentido na vida. Sua obra 'Romanceiro da Inconfidência' é um marco da poesia histórica brasileira."
+    },
+    "eca-de-queiroz": {
+        name: "Eça de Queiroz",
+        birthDate: "25 de novembro de 1845",
+        deathDate: "16 de agosto de 1900",
+        image: "img/eça.webp",
+        description: "Eça de Queiroz (1845-1900) foi um dos maiores romancistas da literatura portuguesa e um dos principais representantes do Realismo em Portugal. Suas obras, como 'Os Maias' e 'O Crime do Padre Amaro', criticam a sociedade portuguesa do século XIX, expondo as hipocrisias e as injustiças sociais da época."
+    },
+    "jorge-amado": {
+        name: "Jorge Amado",
+        birthDate: "10 de agosto de 1912",
+        deathDate: "6 de agosto de 2001",
+        image: "img/jorgeamado.webp",
+        description: "Jorge Amado (1912-2001) foi um dos escritores brasileiros mais populares e internacionalmente reconhecidos. Suas obras retratam a vida, os costumes e as injustiças sociais do povo baiano. Entre suas obras mais conhecidas estão 'Gabriela, Cravo e Canela' e 'Capitães da Areia', que abordam temas como o cangaço, a religião e a marginalização social."
+    },
+    "luis-vaz-de-camoes": {
+        name: "Luís Vaz de Camões",
+        birthDate: "1524",
+        deathDate: "10 de junho de 1580",
+        image: "img/luiz-vaz-camoes.webp",
+        description: "Luís de Camões (1524-1580) é o maior poeta da língua portuguesa e autor de 'Os Lusíadas', uma epopeia que celebra as navegações portuguesas e a descoberta do caminho marítimo para a Índia. Sua obra é marcada pela exaltação dos feitos heroicos e pela profunda expressão dos sentimentos humanos, incluindo o amor e a saudade."
+    },
+    "tomas-antonio-gonzaga": {
+        name: "Tomás António Gonzaga",
+        birthDate: "11 de agosto de 1744",
+        deathDate: "20 de janeiro de 1810",
+        image: "img/Tomas-Antonio-Gonzaga.jpg",
+        description: "Tomás António Gonzaga (1744-1810) foi um dos principais poetas do Arcadismo em Portugal e no Brasil. Sua obra mais conhecida, 'Marília de Dirceu', é uma coletânea de poesias líricas que expressam seu amor por Marília, representando o ideal pastoral e bucólico característico do movimento árcade."
+    }
+};
+
+        
+        // Função para obter o parâmetro da URL
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+        
+        // Identifica o autor a ser exibido com base no parâmetro 'author'
+        const authorId = getParameterByName('author');
+        const author = authorsContent[authorId];
+        
+        if (author) {
+            document.getElementById('author-name').innerText = author.name;
+            document.getElementById('author-image').src = author.image;
+            document.getElementById('birth-date').innerHTML = `<strong>Data de nascimento: </strong>${author.birthDate}`;
+            document.getElementById('death-date').innerHTML = `<strong>Data de falecimento: </strong>${author.deathDate}`;
+            document.getElementById('author-description').innerText = author.description;
+        } else {
+            document.getElementById('author-name').innerText = "Autor não encontrado";
+            document.getElementById('author-description').innerText = "Desculpe, não foi possível encontrar informações sobre este autor.";
+        }
+        </script>   
+            <div vw class="enabled"> 
+                <div vw-access-button class="active"></div>
+                 <div vw-plugin-wrapper> 
+                     <div class="vw-plugin-top-wrapper">
+                     </div> 
+                 </div> 
+             </div> 
+             
+             <script type="text/javascript">
+         
+                 window.onload = function() {
+                     //Seleciona o elemento body para que possamos alterar o estilo.
+                     var corpoDaPagina = document.querySelector('body');
+                     var aumentarTexto = document.getElementById('aumentar-texto');
+                     var diminuirTexto = document.getElementById('diminuir-texto');
+         
+                     //O padrão de tamanho equivale a 100% do valor definido do style.
+                     var fontSize = 100;
+         
+                     //Valor percentual de 10% que irá aumentar ou diminuir do padrão da fonte.
+                     var qntAumentarDiminuir = 10;
+         
+                     //Evento de click para aumentar a fonte.
+                     aumentarTexto.addEventListener('click', function(event) {
+                         fontSize += qntAumentarDiminuir;
+                         corpoDaPagina.style.fontSize = fontSize + '%';
+                     });
+         
+                     //Evento de click para diminuir a fonte.
+                     diminuirTexto.addEventListener('click', function(event) {
+                         fontSize -= qntAumentarDiminuir;
+                         corpoDaPagina.style.fontSize = fontSize + '%';
+                     });
+                 }
+         
+                 document.getElementById('alternar-contraste').addEventListener('click', function() {
+                     document.body.classList.toggle('alto-contraste');
+                 });
+         
+                 document.getElementById('preto-e-branco').addEventListener
+                 ('click', function() 
+                     {
+                         document.body.classList.toggle('preto-e-branco');
+                     }
+                 );
+         
+             </script>
+         
+             <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+             <script>
+                 new window.VLibras.Widget('https://vlibras.gov.br/app');
+             </script>  
+</body>
+</html>

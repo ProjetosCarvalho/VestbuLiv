@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Detalhes da obra</title>
+</head>
+<body>
+    <header>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href=""><img src="img/Logo.png" alt="Logo"></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="obras.html">Obras</a></li>
+                    <li><a href="autores.html">Autores</a></li>
+                    <li><a href="universidades.html">Universidades</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <ul class="nav-icons">
+                    <button id="aumentar-texto"><img src="img/a_mais.png" class="icon" title="Ferramenta aumentar texto"/></button>
+                    <button id="diminuir-texto"><img src="img/a_menos.png" class="icon" title="Ferramenta diminuir texto"/></button>
+                    <button id="alternar-contraste"><img src="img/alto_contraste.png" class="icon" title="Ferramenta alto contraste"/></button>
+                    <button id="preto-e-branco"><img src="img/preto_e_branco.png" class="icon" title="Ferramenta preto e branco"/></button>
+                </ul>
+            </nav>
+        </header>
+    </header>
+    <div>
+        <div class="author-section">
+            <h1 id="book-title">Título do Livro</h1>
+            <div class="author-card">
+                <img id="book-image" src="img/domcasmurro.jpg" alt="Capa do Livro">
+                <div class="author-info">
+                    <p id="publication-date"><strong>Data da primeira publicação: </strong>1899</p>
+                    <p id="author-name"><strong>Autor: </strong>Machado de Assis</p>
+                </div>
+            </div>
+            <p id="book-description" class="author-description">
+                Descrição do livro.
+            </p>
+        </div>        
+    </div>
+    <footer>
+        <h2>VestbuLiv @2024</h2>
+    </footer>
+    <script>
+        // Estrutura de dados contendo o conteúdo para cada livro
+        const booksContent = {
+            "dom-casmurro": {
+        title: "Dom Casmurro",
+        author: "Machado de Assis",
+        publicationDate: "1899",
+        image: "img/domcasmurro.jpg",
+        description: "Narrado em primeira pessoa, o protagonista Bento revela sua história de amor e o drama de sua vida ao se apaixonar por sua vizinha: Capitu. O romance tem esse nome, pois o narrador recebe o apelido de “Dom Casmurro”, criado por um jovem poeta. Nota-se, em muitas passagens, a ironia do autor e a crítica à sociedade brasileira da época. Temas como o amor, o ciúme, o caráter e a traição são destacados na obra de Machado. A verdade é que, ao ler a obra, o leitor fica na dúvida, pois em nenhum momento Capitu declara seu envolvimento com o amigo de Bentinho, Escobar."
+    },
+    "iracema": {
+        title: "Iracema",
+        author: "José de Alencar",
+        publicationDate: "1865",
+        image: "img/iracema.jpg",
+        description: "Iracema é um romance escrito por José de Alencar e publicado em 1865. É um dos livros mais importantes do romantismo no Brasil, que aborda a formação da sociedade brasileira e a relação entre indígenas e colonizadores."
+    },
+    "vidas-secas": {
+        title: "Vidas Secas",
+        author: "Graciliano Ramos",
+        publicationDate: "1938",
+        image: "img/vidassecas.webp",
+        description: "Vidas Secas é um romance que retrata a vida dura e opressiva dos habitantes do sertão nordestino do Brasil. A obra explora as condições de pobreza e seca enfrentadas pela família de retirantes e os desafios que eles enfrentam para sobreviver. Graciliano Ramos utiliza uma linguagem seca e direta para destacar a dureza da vida e a luta constante pela sobrevivência."
+    },
+    "o-cortico": {
+        title: "O Cortiço",
+        author: "Aluísio Azevedo",
+        publicationDate: "1890",
+        image: "img/ocortico.jpg",
+        description: "O Cortiço é uma obra naturalista que descreve a vida em um cortiço carioca, evidenciando a degradação social e a miséria dos moradores. Aluísio Azevedo usa uma narrativa detalhada para criticar a desigualdade social e as condições de vida precárias, revelando a influência do ambiente nas pessoas e suas ações."
+    },
+    "memorias-postumas": {
+        title: "Memórias Póstumas de Brás Cubas",
+        author: "Machado de Assis",
+        publicationDate: "1881",
+        image: "img/memoriaspost.webp",
+        description: "Este romance é considerado um marco do realismo brasileiro. Narrado pelo defunto-autor Brás Cubas, o livro apresenta uma crítica mordaz à sociedade carioca do século XIX. A obra explora temas como a morte, a vaidade, e a hipocrisia social com um estilo inovador e irônico."
+    },
+    "o-primo-basilio": {
+        title: "O Primo Basílio",
+        author: "José de Alencar",
+        publicationDate: "1878",
+        image: "img/oprimo.webp",
+        description: "O Primo Basílio é um romance que aborda a infidelidade conjugal e as intrigas sociais. A história gira em torno do adultério entre a protagonista e seu primo, explorando as consequências morais e sociais de suas ações."
+    },
+    "capitaes-da-areia": {
+        title: "Capitães da Areia",
+        author: "Jorge Amado",
+        publicationDate: "1937",
+        image: "img/capitaes.jpg",
+        description: "Capitães da Areia é um romance que narra a vida de um grupo de meninos de rua na cidade de Salvador. Jorge Amado retrata com sensibilidade e crítica social as dificuldades e a resistência desses jovens em uma sociedade que os marginaliza."
+    },
+    "os-lusiadas": {
+        title: "Os Lusíadas",
+        author: "Luís de Camões",
+        publicationDate: "1556",
+        image: "img/oslusiadas.jfif",
+        description: "Os Lusíadas é um épico português que celebra a navegação de Vasco da Gama e a descoberta do caminho marítimo para as Índias. A obra é rica em elementos mitológicos e históricos, exaltando a coragem e a aventura dos navegadores portugueses."
+    },
+    "marilia-de-dirceu": {
+        title: "Marília de Dirceu",
+        author: "Tomás Antônio Gonzaga",
+        publicationDate: "1792",
+        image: "img/marilia.jpg",
+        description: "Marília de Dirceu é uma coletânea de poesias líricas que expressam o amor e a saudade do poeta por sua amada Marília. A obra é um exemplo do arcadismo brasileiro e destaca a simplicidade e a idealização do amor pastoral."
+    },
+    "quincas-borba": {
+        title: "Quincas Borba",
+        author: "Machado de Assis",
+        publicationDate: "1891",
+        image: "img/quincasb.jpg",
+        description: "Quincas Borba é um romance que segue a trajetória de Rubião, um homem que herda a fortuna de Quincas Borba, um filósofo excêntrico. A obra explora temas como a filosofia do 'Humanitismo' e a crítica social, com uma abordagem irônica e perspicaz."
+    },
+    "romanceiro-da-inconfidencia": {
+        title: "Romanceiro da Inconfidência",
+        author: "Cecília Meireles",
+        publicationDate: "1953",
+        image: "img/romanceiro.jpg",
+        description: "Romanceiro da Inconfidência é uma coletânea de poemas que revisitam a Inconfidência Mineira, um movimento separatista do Brasil colonial. Cecília Meireles utiliza a poesia para refletir sobre a luta pela liberdade e a história dos heróis envolvidos na insurreição."
+    },
+    "casa-velha": {
+        title: "Casa Velha",
+        author: "Machado de Assis",
+        publicationDate: "1917",
+        image: "img/casavelha.jpg",
+        description: "Casa Velha é um romance que explora a vida em uma fazenda do interior paulista, abordando temas como a vida rural e as mudanças sociais. A obra combina elementos de realismo com uma narrativa que destaca a dinâmica familiar e a influência do ambiente na formação dos personagens."
+    }
+        };
+
+        // Função para obter o parâmetro da URL
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Identifica o livro a ser exibido com base no parâmetro 'book'
+        const bookId = getParameterByName('book');
+        const book = booksContent[bookId];
+
+        if (book) {
+            document.getElementById('book-title').innerText = book.title;
+            document.getElementById('book-image').src = book.image;
+            document.getElementById('publication-date').innerHTML = `<strong>Data da primeira publicação: </strong>${book.publicationDate}`;
+            document.getElementById('author-name').innerHTML = `<strong>Autor: </strong>${book.author}`;
+            document.getElementById('book-description').innerText = book.description;
+        } else {
+            document.getElementById('book-title').innerText = "Livro não encontrado";
+            document.getElementById('book-description').innerText = "Desculpe, não foi possível encontrar informações sobre este livro.";
+        }
+    </script>
+        <div vw class="enabled"> 
+            <div vw-access-button class="active"></div>
+             <div vw-plugin-wrapper> 
+                 <div class="vw-plugin-top-wrapper">
+                 </div> 
+             </div> 
+         </div> 
+         
+         <script type="text/javascript">
+     
+             window.onload = function() {
+                 //Seleciona o elemento body para que possamos alterar o estilo.
+                 var corpoDaPagina = document.querySelector('body');
+                 var aumentarTexto = document.getElementById('aumentar-texto');
+                 var diminuirTexto = document.getElementById('diminuir-texto');
+     
+                 //O padrão de tamanho equivale a 100% do valor definido do style.
+                 var fontSize = 100;
+     
+                 //Valor percentual de 10% que irá aumentar ou diminuir do padrão da fonte.
+                 var qntAumentarDiminuir = 10;
+     
+                 //Evento de click para aumentar a fonte.
+                 aumentarTexto.addEventListener('click', function(event) {
+                     fontSize += qntAumentarDiminuir;
+                     corpoDaPagina.style.fontSize = fontSize + '%';
+                 });
+     
+                 //Evento de click para diminuir a fonte.
+                 diminuirTexto.addEventListener('click', function(event) {
+                     fontSize -= qntAumentarDiminuir;
+                     corpoDaPagina.style.fontSize = fontSize + '%';
+                 });
+             }
+     
+             document.getElementById('alternar-contraste').addEventListener('click', function() {
+                 document.body.classList.toggle('alto-contraste');
+             });
+     
+             document.getElementById('preto-e-branco').addEventListener
+             ('click', function() 
+                 {
+                     document.body.classList.toggle('preto-e-branco');
+                 }
+             );
+     
+         </script>
+     
+         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+         <script>
+             new window.VLibras.Widget('https://vlibras.gov.br/app');
+         </script>
+</body>
+</html>
